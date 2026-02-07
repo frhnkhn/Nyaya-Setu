@@ -63,3 +63,12 @@ The platform focuses on **supporting** justice institutions, not replacing court
 
 ## 🧱 Project Structure
 
+nyayasetu/
+├── index.html # Home
+├── rights.html # Know Your Rights
+├── assistant.html # AI Legal Assistant
+├── dispute.html # Raise a Dispute
+├── status.html # Track Case Status
+├── style.css # Shared styles
+├── script.js # Shared logic
+└── README.md
