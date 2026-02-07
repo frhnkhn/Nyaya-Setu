@@ -312,7 +312,7 @@ window.getAIResponse = async function(userPrompt) {
         // Initialize Gemini AI lazily to avoid top-level environment errors
         // WARNING: Storing API keys in client-side code is insecure. Prefer a server-side
         // proxy that holds the key and forwards requests to the Gemini API.
-         const ai = new GoogleGenAI({ apiKey: "AIzaSyBrhsFJ51WxJwBQYIiF1jTMBpvwbXmkfIE" });
+         const ai = new GoogleGenAI({ apiKey: "AIzaSyAF9EXVmao44S0s4ieAoamWqKI_QGkKOlA" });
         
         const response = await ai.models.generateContent({
             model: 'gemini-3-flash-preview',
