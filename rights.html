@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know Your Rights - NyayaSetu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <i class="ri-scales-3-line"></i> NyayaSetu
+            </a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="rights.html" class="active">Know Rights</a>
+                <a href="assistant.html">AI Assistant</a>
+                <a href="dispute.html">Raise Dispute</a>
+                <a href="status.html">Track Status</a>
+            </div>
+
+            <button id="themeToggle" class="theme-btn" aria-label="Toggle Dark Mode">
+                <i class="ri-moon-line"></i>
+            </button>
+
+            <div class="mobile-menu-btn" id="menuBtn">
+                <i class="ri-menu-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 style="text-align: center; margin-bottom: 1rem;">Legal Encyclopedia</h1>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Empower yourself with knowledge. Browse through key Indian laws, fundamental rights, and citizen safeguards.
+            </p>
+
+            <div class="search-container">
+                <i class="ri-search-line search-icon"></i>
+                <input type="text" id="rightsSearch" class="search-input" placeholder="Search for rights, acts, or keywords (e.g. 'Arrest', 'Women', 'Theft')...">
+            </div>
+            
+            <div class="grid">
+                <!-- CONSTITUTION -->
+                <div class="card cat-const">
+                    <span class="card-badge">Constitution</span>
+                    <div class="card-icon"><i class="ri-government-line"></i></div>
+                    <h3>Right to Equality (Art 14)</h3>
+                    <p>The State shall not deny to any person equality before the law or the equal protection of the laws within the territory of India.</p>
+                </div>
+                <div class="card cat-const">
+                    <span class="card-badge">Constitution</span>
+                    <div class="card-icon"><i class="ri-speak-line"></i></div>
+                    <h3>Freedom of Speech (Art 19)</h3>
+                    <p>Protection of certain rights regarding freedom of speech, expression, assembly, association, movement, and residence.</p>
+                </div>
+                <div class="card cat-const">
+                    <span class="card-badge">Constitution</span>
+                    <div class="card-icon"><i class="ri-heart-pulse-line"></i></div>
+                    <h3>Protection of Life (Art 21)</h3>
+                    <p>No person shall be deprived of his life or personal liberty except according to procedure established by law.</p>
+                </div>
+                <div class="card cat-const">
+                    <span class="card-badge">Constitution</span>
+                    <div class="card-icon"><i class="ri-hand-coin-line"></i></div>
+                    <h3>Right against Exploitation (Art 23-24)</h3>
+                    <p>Prohibits human trafficking, forced labor, and employment of children under 14 years of age in hazardous jobs.</p>
+                </div>
+
+                <!-- POLICE / CRIMINAL -->
+                <div class="card cat-crime">
+                    <span class="card-badge">Police Procedure</span>
+                    <div class="card-icon"><i class="ri-handcuffs-line"></i></div>
+                    <h3>Rights upon Arrest (Art 22)</h3>
+                    <p>Right to be informed of grounds of arrest, right to consult a lawyer, and right to be produced before a magistrate within 24 hours.</p>
+                </div>
+                <div class="card cat-crime">
+                    <span class="card-badge">Police Procedure</span>
+                    <div class="card-icon"><i class="ri-file-text-line"></i></div>
+                    <h3>Zero FIR</h3>
+                    <p>An FIR can be filed in any police station (irrespective of jurisdiction) for cognizable offenses. Police must transfer it later.</p>
+                </div>
+                <div class="card cat-crime">
+                    <span class="card-badge">Criminal Law</span>
+                    <div class="card-icon"><i class="ri-spy-line"></i></div>
+                    <h3>Theft (BNS Sec 303)</h3>
+                    <p>Moving a person's property without their consent is theft. Replaces IPC Section 379.</p>
+                </div>
+
+                <!-- WOMEN'S RIGHTS -->
+                <div class="card cat-women">
+                    <span class="card-badge">Women's Rights</span>
+                    <div class="card-icon"><i class="ri-women-line"></i></div>
+                    <h3>Domestic Violence Act</h3>
+                    <p>Protection of Women from Domestic Violence Act, 2005 provides civil remedies (protection orders, residence orders) for women facing abuse at home.</p>
+                </div>
+                <div class="card cat-women">
+                    <span class="card-badge">Women's Rights</span>
+                    <div class="card-icon"><i class="ri-building-4-line"></i></div>
+                    <h3>POSH Act</h3>
+                    <p>Prevention of Sexual Harassment at Workplace Act, 2013 mandates an Internal Complaints Committee (ICC) in organizations with 10+ employees.</p>
+                </div>
+                <div class="card cat-women">
+                    <span class="card-badge">Women's Rights</span>
+                    <div class="card-icon"><i class="ri-parent-line"></i></div>
+                    <h3>Maternity Benefit</h3>
+                    <p>The Maternity Benefit Act guarantees 26 weeks of paid leave for pregnant women employees in establishments with 10+ workers.</p>
+                </div>
+                <div class="card cat-women">
+                    <span class="card-badge">Women's Rights</span>
+                    <div class="card-icon"><i class="ri-moon-clear-line"></i></div>
+                    <h3>No Night Arrest</h3>
+                    <p>According to CrPC/BNSS, women generally cannot be arrested after sunset and before sunrise, except in exceptional circumstances with Magistrate permission.</p>
+                </div>
+
+                <!-- CONSUMER & CIVIL -->
+                <div class="card cat-consumer">
+                    <span class="card-badge">Consumer</span>
+                    <div class="card-icon"><i class="ri-shopping-cart-2-line"></i></div>
+                    <h3>Consumer Protection Act</h3>
+                    <p>Right to safety, right to be informed, right to choose, and right to seek redressal against unfair trade practices.</p>
+                </div>
+                <div class="card cat-consumer">
+                    <span class="card-badge">Consumer</span>
+                    <div class="card-icon"><i class="ri-price-tag-3-line"></i></div>
+                    <h3>MRP Rights</h3>
+                    <p>Consumers cannot be charged more than the Maximum Retail Price (MRP). You can bargain for less than MRP, but paying more is a violation.</p>
+                </div>
+                <div class="card cat-civil">
+                    <span class="card-badge">Information</span>
+                    <div class="card-icon"><i class="ri-question-mark"></i></div>
+                    <h3>RTI Act 2005</h3>
+                    <p>Right to Information empowers citizens to demand information from any public authority, promoting transparency and accountability.</p>
+                </div>
+
+                <!-- DIGITAL / CYBER -->
+                <div class="card cat-cyber">
+                    <span class="card-badge">Digital</span>
+                    <div class="card-icon"><i class="ri-wifi-off-line"></i></div>
+                    <h3>Cyber Stalking</h3>
+                    <p>Monitoring a person's internet usage or electronic communication to harass them is a punishable offense under the IT Act/BNS.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 NyayaSetu. A Hackathon Project for SDG 16.</p>
+    </footer>
+</body>
+</html>

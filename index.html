@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NyayaSetu - Bridging Justice</title>
+    <!-- Modern Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <i class="ri-scales-3-line"></i> NyayaSetu
+            </a>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="active">Home</a>
+                <a href="rights.html">Know Rights</a>
+                <a href="assistant.html">AI Assistant</a>
+                <a href="dispute.html">Raise Dispute</a>
+                <a href="status.html">Track Status</a>
+            </div>
+
+            <button id="themeToggle" class="theme-btn" aria-label="Toggle Dark Mode">
+                <i class="ri-moon-line"></i>
+            </button>
+
+            <div class="mobile-menu-btn" id="menuBtn">
+                <i class="ri-menu-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1 class="animate-enter">Access Justice, Simplified.</h1>
+            <p class="animate-enter delay-1">Empowering citizens with instant legal rights information, AI-driven guidance, and a streamlined mechanism for resolving civil disputes efficiently.</p>
+            
+            <div class="btn-group animate-enter delay-2">
+                <a href="assistant.html" class="btn btn-primary">
+                    <i class="ri-robot-line"></i> Ask AI Lawyer
+                </a>
+                <a href="dispute.html" class="btn btn-accent">
+                    <i class="ri-file-warning-line"></i> File a Dispute
+                </a>
+                <a href="rights.html" class="btn btn-secondary">
+                    <i class="ri-book-open-line"></i> Learn Your Rights
+                </a>
+            </div>
+        </section>
+
+        <section class="container animate-enter delay-3">
+            <h2 class="section-title">Why Choose NyayaSetu?</h2>
+            <div class="grid">
+                <div class="card cat-const">
+                    <div class="card-icon"><i class="ri-book-read-line"></i></div>
+                    <h3>Legal Literacy</h3>
+                    <p>Demystifying complex Indian laws into simple, actionable language. Know your fundamental rights in seconds.</p>
+                </div>
+                <div class="card cat-cyber">
+                    <div class="card-icon"><i class="ri-openai-fill"></i></div>
+                    <h3>Smart AI Assistance</h3>
+                    <p>Our advanced AI, NyayaSahayak, provides 24/7 preliminary legal guidance, drafting help, and procedural clarity.</p>
+                </div>
+                <div class="card cat-consumer">
+                    <div class="card-icon"><i class="ri-hammer-line"></i></div>
+                    <h3>Alternative Dispute Resolution</h3>
+                    <p>Reduce court burden. We classify civil disputes and suggest mediation, Lok Adalats, or arbitration paths.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="margin-top: 5rem; text-align: center;">
+            <div style="background: var(--bg-surface); padding: 3rem; border-radius: var(--radius-lg); border: 1px solid var(--border-light);">
+                <h2 style="font-family: 'Merriweather', serif; font-size: 1.8rem; margin-bottom: 1rem;">Trusted, Secure, and Private</h2>
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">We adhere to strict data privacy standards. Your case details are encrypted and only shared with authorized legal entities.</p>
+                <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 3rem; color: var(--text-tertiary); font-size: 2rem;">
+                    <i class="ri-shield-check-line"></i>
+                    <i class="ri-lock-2-line"></i>
+                    <i class="ri-government-line"></i>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 NyayaSetu. A Hackathon Project for SDG 16: Peace, Justice, and Strong Institutions.</p>
+        <p style="font-size: 0.85rem; margin-top: 0.75rem; opacity: 0.8;">Disclaimer: This platform provides legal information for awareness, not professional legal counsel.</p>
+    </footer>
+</body>
+</html>

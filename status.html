@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Status - NyayaSetu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <i class="ri-scales-3-line"></i> NyayaSetu
+            </a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="rights.html">Know Rights</a>
+                <a href="assistant.html">AI Assistant</a>
+                <a href="dispute.html">Raise Dispute</a>
+                <a href="status.html" class="active">Track Status</a>
+            </div>
+
+            <button id="themeToggle" class="theme-btn" aria-label="Toggle Dark Mode">
+                <i class="ri-moon-line"></i>
+            </button>
+
+            <div class="mobile-menu-btn" id="menuBtn">
+                <i class="ri-menu-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Track Your Case</h2>
+            <div class="form-group">
+                <label for="caseIdInput">Enter Case ID</label>
+                <div style="display: flex; gap: 1rem;">
+                    <input type="text" id="caseIdInput" placeholder="e.g., NS-171542" style="font-family: monospace; letter-spacing: 1px; font-weight: 500;">
+                    <button class="btn btn-primary" id="trackBtn" style="padding-left: 2.5rem; padding-right: 2.5rem;">Track</button>
+                </div>
+            </div>
+
+            <div id="statusResult" class="status-result">
+                <div class="case-header">
+                    <h3 style="margin: 0; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="ri-file-list-3-line" style="color: var(--brand-accent);"></i> Case File
+                    </h3>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span id="resDate" style="font-size: 0.9rem; color: var(--text-secondary);"></span>
+                        <button class="btn-icon" onclick="window.print()" title="Print Case File">
+                            <i class="ri-printer-line"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="case-body">
+                    <div class="case-meta-grid">
+                        <div class="meta-item">
+                            <label>Case ID Reference</label>
+                            <div id="resId" style="font-family: monospace;"></div>
+                        </div>
+                        <div class="meta-item">
+                            <label>Dispute Category</label>
+                            <div id="resCategory"></div>
+                        </div>
+                        <div class="meta-item">
+                            <label>Current Status</label>
+                            <div><span id="resStatus" class="status-badge"></span></div>
+                        </div>
+                    </div>
+
+                    <div class="recommendation-box">
+                        <div class="rec-title"><i class="ri-scales-line"></i> AI Legal Assessment</div>
+                        <span id="resAnalysis" style="color: var(--text-main); line-height: 1.6;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 NyayaSetu. A Hackathon Project for SDG 16.</p>
+    </footer>
+</body>
+</html>

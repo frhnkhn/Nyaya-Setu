@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Legal Assistant - NyayaSetu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <i class="ri-scales-3-line"></i> NyayaSetu
+            </a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="rights.html">Know Rights</a>
+                <a href="assistant.html" class="active">AI Assistant</a>
+                <a href="dispute.html">Raise Dispute</a>
+                <a href="status.html">Track Status</a>
+            </div>
+
+            <button id="themeToggle" class="theme-btn" aria-label="Toggle Dark Mode">
+                <i class="ri-moon-line"></i>
+            </button>
+
+            <div class="mobile-menu-btn" id="menuBtn">
+                <i class="ri-menu-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 style="text-align: center; margin-bottom: 2rem;" class="animate-enter">Legal AI Assistant</h1>
+            
+            <div class="chat-interface animate-enter delay-1">
+                <div class="chat-header">
+                    <div class="chat-meta">
+                        <i class="ri-lock-line"></i> Private & Encrypted Session
+                    </div>
+                    <button onclick="clearChat()" class="btn-clear" title="Clear conversation">
+                        <i class="ri-delete-bin-line"></i> Clear Chat
+                    </button>
+                </div>
+
+                <!-- AI Disclaimer Prominently Displayed -->
+                <div class="ai-disclaimer">
+                    <i class="ri-alert-line"></i>
+                    <span><b>Disclaimer:</b> I am an AI, not a lawyer. My responses are for informational purposes only. Always consult a qualified professional for serious legal matters.</span>
+                </div>
+                
+                <div class="chat-history" id="chatHistory">
+                    <!-- Default Welcome Message -->
+                    <div class="message-wrapper ai">
+                        <div class="avatar ai"><i class="ri-robot-2-line"></i></div>
+                        <div class="message-bubble">
+                            <strong>NyayaSahayak</strong><br>
+                            Namaste! I am your virtual legal guide. I can help explain sections of the BNS, your fundamental rights, or how to file a complaint. What is your legal query today?
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Prompts for Hackathon Demo -->
+                <div class="quick-prompts" id="quickPrompts">
+                    <div class="chip" onclick="usePrompt('How do I file an FIR?')">📝 How to file FIR?</div>
+                    <div class="chip" onclick="usePrompt('My landlord is not returning my deposit')">🏠 Landlord Issues</div>
+                    <div class="chip" onclick="usePrompt('What are my rights if arrested?')">👮 Rights during arrest</div>
+                    <div class="chip" onclick="usePrompt('Draft a complaint for defective product')">🛍️ Consumer Complaint</div>
+                </div>
+
+                <div class="chat-input-area">
+                    <input type="text" id="userInput" placeholder="Ask a legal question..." onkeypress="handleEnter(event)">
+                    <button class="btn btn-primary" onclick="sendMessage()" id="sendBtn" style="border-radius: 50%; width: 50px; height: 50px; padding: 0; flex-shrink: 0;">
+                        <i class="ri-send-plane-fill"></i>
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <script>
+        function handleEnter(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+
+        function usePrompt(text) {
+            const input = document.getElementById('userInput');
+            input.value = text;
+            sendMessage();
+        }
+
+        function scrollToBottom() {
+            const history = document.getElementById('chatHistory');
+            history.scrollTo({
+                top: history.scrollHeight,
+                behavior: 'smooth'
+            });
+        }
+        
+        function clearChat() {
+            if (confirm("Are you sure you want to clear the chat history?")) {
+                const history = document.getElementById('chatHistory');
+                history.innerHTML = `
+                    <div class="message-wrapper ai">
+                        <div class="avatar ai"><i class="ri-robot-2-line"></i></div>
+                        <div class="message-bubble">
+                            <strong>NyayaSahayak</strong><br>
+                            Namaste! I am your virtual legal guide. I can help explain sections of the BNS, your fundamental rights, or how to file a complaint. What is your legal query today?
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('userInput');
+            const history = document.getElementById('chatHistory');
+            const btn = document.getElementById('sendBtn');
+            const text = input.value.trim();
+
+            if (!text) return;
+
+            // User Message
+            const userWrap = document.createElement('div');
+            userWrap.className = 'message-wrapper user';
+            userWrap.innerHTML = `
+                <div class="avatar user"><i class="ri-user-smile-line"></i></div>
+                <div class="message-bubble">${text}</div>
+            `;
+            history.appendChild(userWrap);
+            scrollToBottom();
+            
+            input.value = '';
+            input.disabled = true;
+            btn.disabled = true;
+            
+            // Loading Indicator
+            const loaderWrap = document.createElement('div');
+            loaderWrap.className = 'message-wrapper ai';
+            loaderWrap.innerHTML = `
+                <div class="avatar ai"><i class="ri-robot-2-line"></i></div>
+                <div class="message-bubble">
+                    <div class="typing-indicator"><span></span><span></span><span></span></div>
+                </div>
+            `;
+            history.appendChild(loaderWrap);
+            scrollToBottom();
+
+            try {
+                if (!window.getAIResponse) {
+                    throw new Error("AI Service not initialized. Please check your internet connection.");
+                }
+                const response = await window.getAIResponse(text);
+                
+                loaderWrap.remove();
+
+                // AI Message
+                const aiWrap = document.createElement('div');
+                aiWrap.className = 'message-wrapper ai';
+                
+                // Safe markdown parsing
+                let parsedContent = response;
+                if (typeof marked !== 'undefined') {
+                    parsedContent = marked.parse(response);
+                } else if (window.marked && typeof window.marked === 'function') {
+                    parsedContent = window.marked(response);
+                }
+
+                aiWrap.innerHTML = `
+                    <div class="avatar ai"><i class="ri-robot-2-line"></i></div>
+                    <div class="message-bubble">${parsedContent}</div>
+                `;
+                history.appendChild(aiWrap);
+            } catch (error) {
+                loaderWrap.remove();
+                const errWrap = document.createElement('div');
+                errWrap.className = 'message-wrapper ai';
+                errWrap.innerHTML = `
+                    <div class="avatar ai"><i class="ri-error-warning-line"></i></div>
+                    <div class="message-bubble" style="color: var(--danger);">Error: ${error.message || "Connection failed"}</div>
+                `;
+                history.appendChild(errWrap);
+                console.error(error);
+            } finally {
+                input.disabled = false;
+                btn.disabled = false;
+                input.focus();
+                scrollToBottom();
+            }
+        }
+
+        window.addEventListener('load', scrollToBottom);
+    </script>
+
+    <footer>
+        <p>&copy; 2024 NyayaSetu. A Hackathon Project for SDG 16.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raise a Dispute - NyayaSetu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <i class="ri-scales-3-line"></i> NyayaSetu
+            </a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="rights.html">Know Rights</a>
+                <a href="assistant.html">AI Assistant</a>
+                <a href="dispute.html" class="active">Raise Dispute</a>
+                <a href="status.html">Track Status</a>
+            </div>
+
+            <button id="themeToggle" class="theme-btn" aria-label="Toggle Dark Mode">
+                <i class="ri-moon-line"></i>
+            </button>
+
+            <div class="mobile-menu-btn" id="menuBtn">
+                <i class="ri-menu-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h2 style="text-align: center; margin-bottom: 0.5rem;">File a New Dispute</h2>
+            <p style="margin-bottom: 2rem; color: var(--text-secondary); text-align: center; font-size: 0.95rem;">
+                Please provide complete details. Our system will classify the severity and suggest the best legal recourse or mediation path.
+            </p>
+            
+            <form id="disputeForm">
+                
+                <!-- Section 1: Claimant Details -->
+                <h3 class="form-section-title"><i class="ri-user-star-line"></i> Claimant Details</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <div class="input-icon-wrapper">
+                            <input type="text" id="name" required placeholder="e.g. Aditi Sharma">
+                            <i class="ri-user-line"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-icon-wrapper">
+                            <input type="email" id="email" required placeholder="e.g. aditi@example.com">
+                            <i class="ri-mail-line"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <div class="input-icon-wrapper">
+                            <input type="tel" id="phone" required placeholder="e.g. 9876543210">
+                            <i class="ri-phone-line"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City / District</label>
+                        <div class="input-icon-wrapper">
+                            <input type="text" id="city" required placeholder="e.g. Mumbai">
+                            <i class="ri-map-pin-line"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2: Opposing Party -->
+                <h3 class="form-section-title"><i class="ri-user-unfollow-line"></i> Opposing Party</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="respondentName">Name of Person/Entity</label>
+                        <div class="input-icon-wrapper">
+                            <input type="text" id="respondentName" required placeholder="Who is this dispute against?">
+                            <i class="ri-user-unfollow-line"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                         <label for="respondentContact">Their Contact (Optional)</label>
+                        <div class="input-icon-wrapper">
+                            <input type="text" id="respondentContact" placeholder="Phone or Email if known">
+                            <i class="ri-contacts-book-line"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: Dispute Details -->
+                <h3 class="form-section-title"><i class="ri-file-text-line"></i> Incident Details</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="category">Dispute Category</label>
+                        <div class="input-icon-wrapper">
+                            <select id="category" required>
+                                <option value="">Select a category</option>
+                                <option value="property">Property / Land Dispute</option>
+                                <option value="consumer">Consumer Complaint</option>
+                                <option value="neighbor">Neighbor Conflict (Noise/Nuisance)</option>
+                                <option value="family">Family / Matrimonial (Minor)</option>
+                                <option value="theft">Theft / Burglary</option>
+                                <option value="assault">Physical Assault / Violence</option>
+                                <option value="harassment">Harassment</option>
+                                <option value="cyber">Cyber Crime / Fraud</option>
+                                <option value="employment">Employment / Labor Issue</option>
+                            </select>
+                            <i class="ri-file-list-2-line"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Estimated Value (₹)</label>
+                        <div class="input-icon-wrapper">
+                            <input type="number" id="amount" placeholder="0 if not applicable">
+                            <i class="ri-money-rupee-circle-line"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date of Incident</label>
+                        <div class="input-icon-wrapper">
+                            <input type="date" id="date" required>
+                            <i class="ri-calendar-event-line"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Detailed Description</label>
+                    <div class="input-icon-wrapper">
+                        <textarea id="description" rows="5" required placeholder="Describe the incident chronologically. Include facts, what happened, and what remedy you seek..."></textarea>
+                        <i class="ri-text" style="top: 1.5rem; transform: none;"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Supporting Evidence (Optional)</label>
+                    <div class="file-upload-placeholder">
+                        <i class="ri-upload-cloud-2-line" style="font-size: 2rem; margin-bottom: 0.5rem; display: block;"></i>
+                        <span>Click to upload photos, screenshots, or documents</span>
+                        <div style="font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.7;">(Demo: No file will be actually uploaded)</div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+                    Submit Dispute
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 NyayaSetu. A Hackathon Project for SDG 16.</p>
+    </footer>
+</body>
+</html>
