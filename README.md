@@ -1,5 +1,7 @@
 # ⚖️ NyayaSetu
 
+🔗 **Live Demo:** https://frhnkhn.github.io/Nyaya-Setu/
+
 NyayaSetu is a digital legal awareness and dispute-resolution platform designed to improve access to justice and strengthen trust in legal institutions. The platform helps citizens understand their rights, access legal information, and resolve minor disputes peacefully before unnecessary escalation to courts.
 
 ---
@@ -35,7 +37,7 @@ The platform focuses on **supporting** justice institutions, not replacing court
   Users can submit dispute details, generate a unique Case ID, and initiate mediation-first resolution.
 
 - 📊 **Case Status Tracking**  
-  Track dispute progress (Under Mediation / Resolved / Escalated) using Case ID.
+  Track dispute progress (Under Mediation / Resolved / Escalated) using a Case ID.
 
 - ⚖️ **Ethical Design**  
   No legal judgments, no replacement of courts, and clear escalation for serious cases.
@@ -60,15 +62,3 @@ The platform focuses on **supporting** justice institutions, not replacing court
 - GitHub Pages (static frontend)
 
 ---
-
-## 🧱 Project Structure
-
-nyayasetu/
-├── index.html # Home
-├── rights.html # Know Your Rights
-├── assistant.html # AI Legal Assistant
-├── dispute.html # Raise a Dispute
-├── status.html # Track Case Status
-├── style.css # Shared styles
-├── script.js # Shared logic
-└── README.md
