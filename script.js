@@ -7,9 +7,8 @@ import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/9
 // Import Google GenAI SDK from CDN for browser compatibility
 import { GoogleGenAI } from "https://esm.run/@google/genai";
 
-// ==========================================
-// ⚠️ CONFIGURATION
-// ==========================================
+//  CONFIGURATION
+
 const firebaseConfig = {
   apiKey: "AIzaSyBXKgYdBV4h0kSC1hMgkqRNYjJAhsARcD4",
   authDomain: "nyaya-setu-50eb1.firebaseapp.com",
@@ -43,9 +42,8 @@ try {
     console.error("Firebase initialization failed. Check your config keys.", error);
 }
 
-// ==========================================
-// 🚀 APP INITIALIZATION
-// ==========================================
+// APP INITIALIZATION
+
 function initApp() {
     // --- Theme Toggle Logic ---
     const themeToggle = document.getElementById('themeToggle');
@@ -297,9 +295,8 @@ if (document.readyState === 'loading') {
     initApp();
 }
 
-// ==========================================
-// 🤖 AI LEGAL ASSISTANT LOGIC (Gemini SDK)
-// ==========================================
+//  AI LEGAL ASSISTANT LOGIC (Gemini SDK)
+
 window.getAIResponse = async function(userPrompt) {
     const systemPrompt = `You are NyayaSahayak, a legal assistant for India. 
     1. Answer queries based on Indian Law (Constitution, BNS, etc.).
@@ -330,9 +327,9 @@ window.getAIResponse = async function(userPrompt) {
     }
 };
 
-// ==========================================
-// ⚖️ DISPUTE HELPER FUNCTIONS
-// ==========================================
+
+//  DISPUTE HELPER FUNCTIONS
+
 
 function classifyDispute(category, amount) {
     const seriousCategories = ['theft', 'assault', 'harassment', 'cyber'];
