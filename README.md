@@ -49,7 +49,7 @@ The platform focuses on **supporting** justice institutions, not replacing court
 **Frontend**
 - HTML
 - CSS
-- JavaScript (ES6+)
+- JavaScript
 
 **Backend (Managed Services)**
 - Firebase Firestore (case storage)
